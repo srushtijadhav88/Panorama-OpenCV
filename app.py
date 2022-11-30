@@ -23,11 +23,9 @@ def main():
 
     st.write(font_css, unsafe_allow_html=True)
 
-    tabs = st.tabs(('About Me','Panorama Image'))
+    tabs = st.tabs(('Panorama Image'))
 
-    # UI Options 
-    with tabs[0]:
-        aboutMe() 
+    # UI Options  
     with tabs[1]:
         panorama()
 
@@ -63,12 +61,6 @@ def uploadImages(key):
         img[:,int(1/4*size):int(3/4*size),:],
         img[:,int(1/2*size):,:]
     ]
-
-# About Me UI 
-
-def aboutMe():
-    
-    st.markdown(requests.get(os.getenv('ABOUT_ME','https://raw.githubusercontent.com/AdarshZamwar/AdarshZamwar/main/README.md')).text, unsafe_allow_html=True)
 
 # Panorama 
 
